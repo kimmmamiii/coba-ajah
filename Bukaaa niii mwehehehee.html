@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Pacar Akuu IFaa</title>
+    <style>
+        /* CSS untuk tampilan */
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f8e1e7;
+            color: #000;
+            font-family: 'Lobster', cursive;
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+            animation: fadeIn 2s;
+        }
+
+        #container {
+            display: none;
+            text-align: center;
+            animation: fadeIn 2s;
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        #start-btn {
+            background-color: #ff79c6;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .message {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #000;
+            font-style: italic;
+        }
+
+        /* Animasi fade-in */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Animasi pulse */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Balon dengan efek gelombang */
+        .balloon {
+            position: absolute;
+            width: 60px;
+            height: 90px;
+            background-color: #ff4081;
+            border-radius: 50% 50% 45% 45%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            animation: floatBalloon 7s ease-in-out infinite;
+        }
+
+        .balloon::after {
+            content: '';
+            width: 2px;
+            height: 80px;
+            background-color: #333;
+            position: absolute;
+            bottom: -80px;
+            animation: waveString 0.8s ease-in-out infinite;
+        }
+
+        /* Warna dan posisi acak balon */
+        .balloon:nth-child(odd) { background-color: #ff79c6; animation-delay: calc(0.5s * var(--i)); }
+        .balloon:nth-child(even) { background-color: #50fa7b; animation-delay: calc(0.3s * var(--i)); }
+
+        /* Animasi gelombang tali */
+        @keyframes waveString {
+            0%, 100% { transform: rotate(0); }
+            50% { transform: rotate(10deg); }
+        }
+
+        /* Animasi melayang balon */
+        @keyframes floatBalloon {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-600px); opacity: 0; }
+        }
+
+        /* Tombol "Selanjutnya" */
+        .next-btn {
+            background-color: #8be9fd;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Efek Petasan */
+        .firework {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            animation: explode 1s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% { width: 0; height: 0; opacity: 1; }
+            100% { width: 150px; height: 150px; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Aloooo cayanggg...!!</h1>
+    <button id="start-btn">💖 Pencet ini deh sayangg mwehehehe</button>
+    
+    <!-- Kontainer foto dan pesan -->
+    <div id="container">
+        <h2>Happyy Birthdayy, Sayangkuu🎉🎉🎉</h2>
+        <img id="photo" src="WhatsApp Image 2024-10-27 at 22.04.15_47d45dc5.jpg" alt="Foto Kita" style="width: 90%; max-width: 300px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <p id="message" class="message">"YEAYYY YEAAAYYY PACARR AKUU ULANGG TAHUN YANGGG KE 42."</p>
+        <button id="next-btn" class="next-btn">Selanjutnya</button>
+    </div>
+
+    <!-- Audio backsound -->
+    <audio id="background-music" loop>
+        <source src="Happy Birthday (Romantic Version).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Banyak Balon -->
+    <div class="balloon" style="left: 10%; top: 90%;" style="--i:1"></div>
+    <div class="balloon" style="left: 20%; top: 80%;" style="--i:2"></div>
+    <div class="balloon" style="left: 30%; top: 90%;" style="--i:3"></div>
+    <div class="balloon" style="left: 40%; top: 80%;" style="--i:4"></div>
+    <div class="balloon" style="left: 50%; top: 90%;" style="--i:5"></div>
+    <div class="balloon" style="left: 60%; top: 80%;" style="--i:6"></div>
+    <div class="balloon" style="left: 70%; top: 90%;" style="--i:7"></div>
+    <div class="balloon" style="left: 80%; top: 80%;" style="--i:8"></div>
+    <div class="balloon" style="left: 90%; top: 90%;" style="--i:9"></div>
+
+    <!-- Petasan -->
+    <div class="firework" style="left: 50%; top: 40%; background-color: #ff79c6;"></div>
+    <div class="firework" style="left: 30%; top: 50%; background-color: #bd93f9;"></div>
+    <div class="firework" style="left: 70%; top: 50%; background-color: #50fa7b;"></div>
+
+    <script>
+        // Data foto dan pesan
+        const photos = [
+            { src: "WhatsApp Image 2024-10-27 at 22.04.15_47d45dc5.jpg", message: "Sekalii lagii Happyy Birthdayy Cayaanggg...🎉💐  cayangg akuuu jugaa mau mengucapkan selamattt buat kamuu, Selamatt karena sudah bertahan sejauh inii, Akuuu harapp kamuu bahagiaa terus yaaa sayangg, Karena adanya kamu didunia inii ituu kebahagiaan buatt orangg yangg adaaa dideket kamuu, Terimakaaaciii cayangg sudahh lahirr diduniaa inii, Semogaa doaa-doaa dan impian kamuu terwujud, Bahagiaa selaluu cayaangggggg, LOVEEEEEE YOUUUUUU💕💕💕" },
+            { src: "WhatsApp Image 2024-10-27 at 22.04.17_42cd7206.jpg", message: "Yeaayy yeaayy celamaaattt ulang tahunn sayangg🎉🎉 semogaa pamnjangg umurrr, sehatt selaluuu yaaa cayaanggg, dan semogaa apaa yangg kamu citaa-citakan dapatt tercapaii, selaluu dikelilingi orangg baikk, selaluu rendah hatii, makin rajin sholatnyaa, selaluu sayangg samaa orangg tua dan keluargaa, makin sayangg sama akuu wkwkwkkwkwk, dann semoga kamu selalu dalam lindungan Allah SWT." },
+            { src: "WhatsApp Image 2024-10-27 at 22.04.16_8037424d.jpg", message: "Semogaa ditahun inii kamuuu juga menjadii pribadii yangg lebihh baikk yaa sayangg, lebihh sabarr dalam hal apapunn, lebihh dewasaa, dikuranginn ngambeknyaa dikitt wkwkwkkw, lebihh semangat lagii kuliahnyaa, jadii wanita yangg lebihh kuatt daripada sebelumnya. Dan semogaa hal baikk selaluu bersama kamu teruss yaa sayangg, semogaa jalan kamuu untuk mencapaii masa depan dipermudah sama Allah SWT yaaa cayanggkuu, pokokknyaa bahagiaa selaluu yaaaa cayanggg, akuu selaluu doaain dann supportt kamuu teruss, dan akuu akan selalu menjadii orangg yangg akan selaluu bangga disetiapp pencapaian kamuu" }
+        ];
+
+        let currentPhoto = 0;
+
+        // Event listener untuk tombol "Mulai"
+        document.getElementById("start-btn").addEventListener("click", function() {
+            document.getElementById("container").style.display = "block";
+            document.getElementById("background-music").play();
+            document.getElementById("start-btn").style.display = "none";
+
+            // Menjalankan efek petasan
+            document.querySelectorAll('.firework').forEach(firework => {
+                firework.style.animation = 'explode 1s ease-out forwards';
+            });
+        });
+
+        // Event listener untuk tombol "Selanjutnya"
+        document.getElementById("next-btn").addEventListener("click", function() {
+            currentPhoto = (currentPhoto + 1) % photos.length;
+            document.getElementById("photo").src = photos[currentPhoto].src;
+            document.getElementById("message").innerText = photos[currentPhoto].message;
+        });
+    </script>
+</body>
+</html>
